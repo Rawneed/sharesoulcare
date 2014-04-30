@@ -1,4 +1,6 @@
 SharesoulcareOrg::Application.routes.draw do
+
+  devise_for :users
 #  root "demo_pages#guest-home-page"
 #  get "demo_pages/user-home-page"
 #  get "demo_pages/admin-home-page"
@@ -10,8 +12,6 @@ SharesoulcareOrg::Application.routes.draw do
   resources :topics
 
   resources :discussions
-
-  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
