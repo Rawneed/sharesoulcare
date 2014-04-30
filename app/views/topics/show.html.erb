@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @topic.image %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @topic.date %>
+</p>
+
+<p>
+  <strong>Bible passage:</strong>
+  <%= @topic.bible_passage %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @topic.introduction %>
+</p>
+
+<p>
+  <strong>Highlight:</strong>
+  <%= @topic.highlight %>
+</p>
+
+<p>
+  <strong>Discussion:</strong>
+  <%= @topic.discussion %>
+</p>
+
+<p>
+  <strong>Conclusion:</strong>
+  <%= @topic.conclusion %>
+</p>
+
+<p>
+  <strong>Action steps:</strong>
+  <%= @topic.action_steps %>
+</p>
+
+<p>
+  <strong>Prayer:</strong>
+  <%= @topic.prayer %>
+</p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>

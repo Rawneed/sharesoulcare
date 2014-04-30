@@ -1,0 +1,45 @@
+<h1>Listing topics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Bible passage</th>
+      <th>Introduction</th>
+      <th>Highlight</th>
+      <th>Discussion</th>
+      <th>Conclusion</th>
+      <th>Action steps</th>
+      <th>Prayer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= topic.image %></td>
+        <td><%= topic.title %></td>
+        <td><%= topic.date %></td>
+        <td><%= topic.bible_passage %></td>
+        <td><%= topic.introduction %></td>
+        <td><%= topic.highlight %></td>
+        <td><%= topic.discussion %></td>
+        <td><%= topic.conclusion %></td>
+        <td><%= topic.action_steps %></td>
+        <td><%= topic.prayer %></td>
+        <td><%= link_to 'Show', topic %></td>
+        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Topic', new_topic_path %>
