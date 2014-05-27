@@ -1,10 +1,20 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  require 'will_paginate/array'
+  def featured
+   @featured_topics = Topic.tagged_with(params[:tag]).last
+  # Topic.where("id <= ?", topic.id).destroy_all
+  end
 
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    # @topics = Topic.all
+  # if params{:tag}
+    @topics = Topic.tagged_with(params[:tag])
+  # else 
+    @topics = Topic.paginate(:page => params[:page], :order => 'created_at DESC')
+  # end
   end
 
   # GET /topics/1
@@ -69,6 +79,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:image, :title, :date, :bible_passage, :introduction, :highlight, :discussion, :conclusion, :action_steps, :prayer)
+      params.require(:topic).permit(:image, :title, :date, :bible_passage, :introduction, :highlight, :discussion, :conclusion, :action_steps, :prayer, :tag_list)
     end
 end

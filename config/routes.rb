@@ -1,6 +1,22 @@
 SharesoulcareOrg::Application.routes.draw do
+   
+  resources :topics
+  resources :inspirations
+  resources :events
+  resources :event_types
+  resources :prayers
+# resources :tags
 
-  devise_for :users
+  get "group/index"
+  get "group/manage"
+  get "inspirations/index"
+  
+   get 'topics/tags/:tag',  to: 'topics#index',  as: :tag 
+#  get 'prayers/tags/:tag', to: 'prayers#index', as: :tag
+
+# , ActiveAdmin::Devise.config
+#  ActiveAdmin.routes(self)
+#  devise_for :users
 #  root "demo_pages#guest-home-page"
 #  get "demo_pages/user-home-page"
 #  get "demo_pages/admin-home-page"
@@ -10,8 +26,6 @@ SharesoulcareOrg::Application.routes.draw do
   root 'topics#index'  
 
   resources :topics
-
-  resources :discussions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

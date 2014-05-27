@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+//= require bootstrap-dropdown
+//= require bootstrap-tooltip
+
+$('.dropdown-toggle').dropdown()
+$("a[rel=popover]").popover()
+$(".tooltip").tooltip()
+$("a[rel=tooltip]").tooltip()

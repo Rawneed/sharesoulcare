@@ -1,0 +1,13 @@
+<div>
+ <h1>Featured Discussion Topic</h1>
+ <p>
+   <%= link_to image_tag("soulcare.jpg", :width => 350), root_path %>
+ </p>
+ <p>
+  <strong><%= topic.title %></strong>
+ </p>
+ <p>
+   <%= Date.today %>
+ </p>
+ <%= topic.tag_list %>
+</div>

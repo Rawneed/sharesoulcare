@@ -1,0 +1,31 @@
+<% provide(:title, 'Inspirations - Watch and listen') %>
+
+<h1>
+ Inspirations - Watch and Listen
+</h1>
+
+<p>
+ This a selection of inspirational videos to encourage you and make your a day a little better.
+ Enjoy and share with your soul care members and people you care about.
+ <%= link_to 'Inspire today...', new_inspiration_path %>
+</p>
+
+<%= will_paginate  %>
+
+<div>
+
+ <% @inspirations.each do |inspiration| %>
+ <h2><%= inspiration.title %></h2>
+ <br/>
+
+<iframe width="420" height="315" 
+src="<%= inspiration.link %>" 
+frameborder="0" allowfullscreen></iframe>
+
+ <!-- Additional Info -->
+ <% end %>
+</div>
+
+<%= will_paginate %>
+
+<%= link_to 'Inspire', new_inspiration_path %>

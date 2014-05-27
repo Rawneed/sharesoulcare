@@ -1,54 +1,32 @@
-<p id="notice"><%= notice %></p>
+<!-- DISCUSSION TOPIC - SHOW -->
+<p id="notice"><%= notice%></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @topic.image %>
-</p>
+<div id="topic-show">
+ <h2><%= @topic.title %></h2>
+ <%= image_tag(@topic.image, :width => 350) if @topic.image.present? %>
+ <hr />
+ <div class="well well-sm"> 
+  <blockquote class="blockquote-reverse">
+   <p><em><%= @topic.bible_passage %></em></p>
+  </blockquote>
+ </div> 
+ <p class="lead"><%= @topic.introduction %></p>
+ <hr />
+ <strong>Higlights</strong>
+ <p><%= @topic.highlight %></p>
+ <hr />
+ <strong>Discussion Points</strong>
+ <p><%= @topic.discussion %></p>
+ <hr />
+ <strong>Conclusion</strong>
+ <p><%= @topic.conclusion %><p>
+ <hr />
+ <strong>Action Steps</strong>
+ <p><%= @topic.action_steps %></p>
+ <hr />
+ <strong>Prayer</strong>
+ <p><%= @topic.prayer %></p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @topic.date %>
-</p>
-
-<p>
-  <strong>Bible passage:</strong>
-  <%= @topic.bible_passage %>
-</p>
-
-<p>
-  <strong>Introduction:</strong>
-  <%= @topic.introduction %>
-</p>
-
-<p>
-  <strong>Highlight:</strong>
-  <%= @topic.highlight %>
-</p>
-
-<p>
-  <strong>Discussion:</strong>
-  <%= @topic.discussion %>
-</p>
-
-<p>
-  <strong>Conclusion:</strong>
-  <%= @topic.conclusion %>
-</p>
-
-<p>
-  <strong>Action steps:</strong>
-  <%= @topic.action_steps %>
-</p>
-
-<p>
-  <strong>Prayer:</strong>
-  <%= @topic.prayer %>
-</p>
-
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_topic_path(@topic) %>
+<%= link_to 'Back to Topics', topics_path %>

@@ -1,0 +1,7 @@
+<div>
+  <span><%= image_tag topic.image_url(:thumb) if topic.image?  %></span>
+  <span class="title"><%= topic.title %></span>
+  <span class="timestamp">
+    Published <%= time_ago_in_words(topic.created_at) %> ago.
+  </span>
+</div>

@@ -9,7 +9,23 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+# to import content
+gem 'activerecord-import'
+
+gem 'acts-as-taggable-on'
+
+gem 'zurb-foundation'
+
 gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick', '~> 3.5.0'
+gem 'biblesearch-api', '1.1.0'
+
+# admin feature gem
+gem 'activeadmin', github: 'gregbell/active_admin'
+# gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+# gem 'ransack', github: 'activerecord-hackery/ransack'
+# gem 'formtastic', github: 'justinfrench/formtastic'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record

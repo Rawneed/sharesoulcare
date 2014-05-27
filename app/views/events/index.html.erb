@@ -1,0 +1,28 @@
+<% provide(:title, 'Events') %>
+<div>
+ <h1>Events<h1>
+ <p>
+  Does your group want to have an outing? Here's a tasteful selection of positive, 
+  encouraging and relationship building events that soul care members can attend as a group.
+ <p>
+ <hr />
+</div>
+<div class="prayer-list"> 
+ <ul>
+ <% @events.each do |event| %>
+  <li>
+   <%= image_tag event.image_url(:thumb) if event.image? %>
+   <strong><%= link_to event.title, event %></strong><br />
+   <p><small>at</small><%= event.location %> 
+    <small>on</small><%= event.date %>
+    <%= event.time %>
+   <span class="label label-success"><%= event.cost %></span></p>
+   <% if event.tag_list.present? %><em>Tags: 
+   <%= raw event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><% end %></em>
+  </li>
+  <hr />
+ <% end %>
+ </ul>
+ <%= will_paginate %>
+ <%= link_to 'Add event', new_event_path %>
+</div>
