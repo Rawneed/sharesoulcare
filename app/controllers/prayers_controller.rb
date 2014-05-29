@@ -1,4 +1,5 @@
 class PrayersController < ApplicationController
+  before_filter :authorize, :except => :index
   before_action :set_prayer, only: [:show, :edit, :update, :destroy]
 
   def featured

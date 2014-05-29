@@ -6,14 +6,20 @@
   Your soul care group can pick other topics of specific interest to you. 
   We hope these topics act as conversation starters to help your spiritual growth and 
   understanding. Fellowship and  encourage each other in the most effective way you 
-  can think of; that's what soul care is all about!
+  can think of; that's what soul care is all about! 
+  <%= link_to 'Add topic for discussion', new_topic_path %>
  </p>
 </div>
 <hr />
 <div class="row">
  <div class="span6">
-  <h3>Featured Topic</h3> 
-  <%= render partial: "featured", collection: @featured_topics %>
+  
+  <h3>Featured Topic</h3>
+  <p><%=  link_to image_tag("soulcare.jpg", :width => 350), root_path %></p>
+  <h4>Title</h4>
+  <p>Intro...</p>
+
+  <p><%= Date.today %></p>
   
  </div> 
  <div class="span6">
@@ -23,8 +29,10 @@
    <li>
     <span><%= image_tag topic.image_url(:thumb) if topic.image? %></span>
     <span class="title"><strong><%= link_to topic.title, topic %></strong></span><br />
+    <% if topic.tag_list.present? %>
     <span><em>Tags: </em><%= raw topic.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></span>
-    <span class="timestamp">Posted <%= time_ago_in_words(topic.created_at) %></span>
+    <% end %>
+    <span class="timestamp">Posted <%= time_ago_in_words(topic.created_at) %> ago</span>
    </li>
    <hr />
    <% end %>
@@ -41,5 +49,5 @@
   We'll also appreciate discussion articles.
  </p>
  
-  <%= link_to 'Add Discussion', new_topic_path %>
+  <%= link_to 'Add topic for discussion', new_topic_path %>
 </div>

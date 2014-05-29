@@ -1,2 +1,21 @@
+<script>
+YUI({
+    classNamePrefix: 'pure'
+}).use('gallery-sm-menu', function (Y) {
+
+    var horizontalMenu = new Y.Menu({
+        container         : '#demo-horizontal-menu',
+        sourceNode        : '#std-menu-items',
+        orientation       : 'horizontal',
+        hideOnOutsideClick: false,
+        hideOnClick       : false
+    });
+
+    horizontalMenu.render();
+    horizontalMenu.show();
+
+});
+</script>
+
 <scripts src="//sharesoulcare.org/assets.bootstrap.js"></scripts>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

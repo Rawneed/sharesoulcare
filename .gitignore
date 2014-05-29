@@ -14,7 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/doc
 
+/config/database.yml
 database.yml
 doc/
 *.swp

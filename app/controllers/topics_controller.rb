@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_filter :authorize, :except => :index
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   require 'will_paginate/array'
   def featured

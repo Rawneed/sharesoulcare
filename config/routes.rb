@@ -1,16 +1,32 @@
 SharesoulcareOrg::Application.routes.draw do
    
+  # get "about/overview"
+  # get "about/team"
+  # get "about/contact"
+  # get "groups/index"
+  # get "groups/find"
+  # get "groups/start"
+  # get "groups/connect"
   resources :topics
   resources :inspirations
   resources :events
   resources :event_types
   resources :prayers
+  resources :groups
 # resources :tags
 
-  get "group/index"
-  get "group/manage"
+  match '/about/contact',to: 'about#contact', :as => :contact_about,  via: 'get'
+  match '/about/overview', to: 'about#overview', :as => :overview_about,  via: 'get'
+  match '/about/team', to: 'about#team', :as => :team_about,    via: 'get'
+
+  match '/groups', to: 'groups#index', via: 'get'
+  match '/groups/find-a-group',         to: 'groups#find', :as => :find_groups,     via: 'get'
+  match '/groups/start-a-group',        to: 'groups#start', :as => :start_groups,   via: 'get'
+  match '/groups/connect-with-a-group', to: 'groups#connect', :as => :connect_groups, via: 'get'
+  
   get "inspirations/index"
   
+#  match 'events/tags/:id' => 'events#tag', via: 'get', :as => :tags
    get 'topics/tags/:tag',  to: 'topics#index',  as: :tag 
 #  get 'prayers/tags/:tag', to: 'prayers#index', as: :tag
 

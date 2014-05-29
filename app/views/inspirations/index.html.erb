@@ -1,15 +1,15 @@
 <% provide(:title, 'Inspirations - Watch and listen') %>
 
-<h1>
- Inspirations - Watch and Listen
-</h1>
+<h1>Inspirations - Watch and Listen</h1>
 
 <p>
- This a selection of inspirational videos to encourage you and make your a day a little better.
- Enjoy and share with your soul care members and people you care about.
+ A selection of inspirational videos to encourage you and make your a day a little better.
+ Start your day with something inspiring and energizing, or reload with positive energy during 
+ the day when you're running low, or cap off the day on a high note. 
+ Enjoy and share with your soul care members, and people you care about.
  <%= link_to 'Inspire today...', new_inspiration_path %>
 </p>
-
+<hr />
 <%= will_paginate  %>
 
 <div>
@@ -19,10 +19,13 @@
  <br/>
 
 <iframe width="420" height="315" 
-src="<%= inspiration.link %>" 
+src=<%= inspiration.link %> 
 frameborder="0" allowfullscreen></iframe>
-
+<br/>
  <!-- Additional Info -->
+ <% if inspiration.tag_list.present? %>
+ <em>Tags: <%= raw inspiration.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em>
+ <% end %>
  <% end %>
 </div>
 

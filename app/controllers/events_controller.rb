@@ -1,10 +1,16 @@
 class EventsController < ApplicationController
+  before_filter :authorize, :except => :index
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   require 'will_paginate/array'
   def featured
   # @events = Event.order(:id).limit(1).last
   # Event.where("id <= ?", topic.id).destroy_all
   end
+
+ def tag
+  @events = Event.tagged_with(params[:id])
+  render :index
+ end
 
   # GET /event
   # GET /events.json

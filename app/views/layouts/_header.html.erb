@@ -20,7 +20,7 @@
           <!-- Inspirations dropdown -->          
           <li id="fat-menu" class="dropdown">
             <a href=<% inspirations_path %> class="dropdown-toggle" data-toggle="dropdown">
-              Inspirations
+              Inspirations <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" role="menu">
               <li><%= link_to "Watch and Listen", inspirations_path  %></li>
@@ -31,20 +31,21 @@
           <!-- Groups dropdown -->          
           <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Groups
+              Groups <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><%= link_to "How to start a group",        '#' %></li>
-              <li><%= link_to "How to find a group",         '#' %></li>
-              <li><%= link_to "How to connect with a group", '#' %></li>
+              <li><%= link_to "How to start a group",        start_groups_path %></li>
+              <li><%= link_to "How to find a group",         find_groups_path %></li>
+              <li><%= link_to "How to connect with a group", connect_groups_path %></li>
             </ul>
           </li>          
           <!-- Events dropdown -->          
            <li id="fat-menu" class="dropdown">
             <a href=<% events_path %> class="dropdown-toggle" data-toggle="dropdown">
-              Events
+              Events <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "Listings", 	    events_path %></li>
               <li><%= link_to "Fellowships",    events_path %></li>
               <li><%= link_to "Cinema/Theatre", events_path %></li>
               <li><%= link_to "Concerts",       events_path %></li>
@@ -56,10 +57,10 @@
           <!-- Resources dropdown -->          
            <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Resources
+              Resources <b class="caret"></b>
             </a>
            <ul class="dropdown-menu" role="menu">
-            <li><%= link_to "Just moved to a new city?",    '#' %></li>
+            <li><%= link_to "Just moved to a new city?",   '#' %></li>
             <li><%= link_to "Find resources in your city", '#' %></li>
             <li><%= link_to "Shopping",                    '#' %></li>
             <li><%= link_to "Radio Stations",              '#' %></li>
@@ -70,12 +71,12 @@
           <!-- About dropdown -->          
            <li id="fat-menu" class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              About
+              About <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" role="menu">
-              <li><%= link_to "Overview", '#' %></li>
-              <li><%= link_to "Team",     '#' %></li>
-              <li><%= link_to "Contact",  '#' %></li>
+              <li><%= link_to "Overview", overview_about_path %></li>
+              <li><%= link_to "Team",     team_about_path %></li>
+              <li><%= link_to "Contact",  contact_about_path %></li>
             </ul>
           </li>          
         </ul>
