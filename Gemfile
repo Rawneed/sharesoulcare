@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
+gem 'rename'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0.4'
 gem 'bootstrap-sass', '~> 2.3.2.0'
@@ -48,6 +50,7 @@ end
 group :production do
  # gem 'pg', '~> 0.17.1'
  gem 'rails_12factor', '0.0.2'
+ gem 'unicorn', '~> 4.8.0' 
 end
 
 # Use SCSS for stylesheets
@@ -80,7 +83,7 @@ end
  gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-  gem 'unicorn'
+#  gem 'unicorn'
 
 # Use Capistrano for deployment
   gem 'capistrano', group: :development

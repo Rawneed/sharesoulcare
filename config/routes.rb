@@ -1,4 +1,4 @@
-SharesoulcareOrg::Application.routes.draw do
+ShareSoulCare::Application.routes.draw do
    
   # get "about/overview"
   # get "about/team"

@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SharesoulcareOrg::Application.config.secret_key_base = '7ea8328d125b767e2d5fd53124ba8ddf6470006fe224cbf707d7e906ed616e34857a54eeb883a40edd1ed263219033fc491da9ca4472251e4f3c0426c1605d9f'
+ShareSoulCare::Application.config.secret_key_base = '7ea8328d125b767e2d5fd53124ba8ddf6470006fe224cbf707d7e906ed616e34857a54eeb883a40edd1ed263219033fc491da9ca4472251e4f3c0426c1605d9f'
