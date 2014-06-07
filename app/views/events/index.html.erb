@@ -1,10 +1,12 @@
 <% provide(:title, 'Events') %>
 <div>
- <h1>Events<h1>
+ <h1>Events</h1>
  <p>
   Does your group want to have an outing? Here's a tasteful selection of positive, 
   encouraging and relationship building events that soul care members can attend as a group.
+   <% if user_signed_in? %>
    <%= link_to 'Add event', new_event_path %>
+   <% end %>
  <p>
  <hr />
 </div>
@@ -25,5 +27,7 @@
  <% end %>
  </ul>
  <%= will_paginate %>
+ <% if user_signed_in? %>
  <%= link_to 'Add event', new_event_path %>
+ <% end %>
 </div>
