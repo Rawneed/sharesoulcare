@@ -7,7 +7,9 @@
   We hope these topics act as conversation starters to help your spiritual growth and 
   understanding. Fellowship and  encourage each other in the most effective way you 
   can think of; that's what soul care is all about! 
-  <%= link_to 'Add topic for discussion', new_topic_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'Add topic for discussion', new_topic_path %>
+  <% end %>
  </p>
 </div>
 <hr />
@@ -48,6 +50,7 @@
   
   We'll also appreciate discussion articles.
  </p>
- 
-  <%= link_to 'Add topic for discussion', new_topic_path %>
+  <% if user_signed_in? %> 
+    <%= link_to 'Add topic for discussion', new_topic_path %>
+  <% end %>
 </div>

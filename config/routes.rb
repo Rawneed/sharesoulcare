@@ -1,5 +1,8 @@
 ShareSoulCare::Application.routes.draw do
    
+  devise_for :users
+  resources :users
+  resources :sessions
   # get "about/overview"
   # get "about/team"
   # get "about/contact"
@@ -14,6 +17,10 @@ ShareSoulCare::Application.routes.draw do
   resources :prayers
   resources :groups
 # resources :tags
+
+  match '/logout', to: 'session#destroy', :as => 'logout', via: 'get'
+  match '/login', to:  'session#new', :as => 'login', via: 'get'
+  match '/sign-up', to: 'users#new', :as => "sign_up", via: 'get'
 
   match '/about/contact',to: 'about#contact', :as => :contact_about,  via: 'get'
   match '/about/overview', to: 'about#overview', :as => :overview_about,  via: 'get'

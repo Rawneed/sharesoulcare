@@ -206,8 +206,6 @@ GEM
       polyamorous (~> 1.0.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    rename (1.0.2)
-      rails (>= 3.0.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec-core (2.13.1)
@@ -306,7 +304,6 @@ DEPENDENCIES
   mini_magick (~> 3.5.0)
   rails (~> 4.0.4)
   rails_12factor (= 0.0.2)
-  rename
   rspec-rails (~> 2.13.1)
   sass-rails (~> 4.0.2)
   sdoc

@@ -7,7 +7,9 @@
  Start your day with something inspiring and energizing, or reload with positive energy during 
  the day when you're running low, or cap off the day on a high note. 
  Enjoy and share with your soul care members, and people you care about.
+<% if user_signed_in? %>
  <%= link_to 'Inspire today...', new_inspiration_path %>
+<% end %>
 </p>
 <hr />
 <%= will_paginate  %>
@@ -30,5 +32,6 @@ frameborder="0" allowfullscreen></iframe>
 </div>
 
 <%= will_paginate %>
-
+<% if user_signed_in? %>
 <%= link_to 'Inspire', new_inspiration_path %>
+<% end %>
