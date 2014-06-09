@@ -21,7 +21,7 @@ gem 'zurb-foundation'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
-gem 'biblesearch-api', '1.1.0'
+# gem 'biblesearch-api', '1.1.0'
 gem 'mysql2'
 
 gem 'net-ssh', '~>2.9.1'
