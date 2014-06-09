@@ -22,6 +22,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'biblesearch-api', '1.1.0'
+gem 'mysql2'
 
 # admin feature gem
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -48,7 +49,8 @@ group :test do
 end
 
 group :production do
- # gem 'pg', '~> 0.17.1'
+  
+# gem 'pg', '~> 0.17.1'
  gem 'rails_12factor', '0.0.2'
  gem 'unicorn', '~> 4.8.0' 
 end
