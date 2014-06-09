@@ -3,7 +3,8 @@
 <p>
  A selection of prayer points for many of life's situations.
  Don't know what to say in prayer? Use these prayer points as a conversation starter between you 
- and God. <%= link_to 'Add Prayer', new_prayer_path %>
+ and God. <% if user_signed_in? %> <%= link_to 'Add Prayer', new_prayer_path %>
+ <% end %>
 </p>
 <hr />
 <div id="prayer-list">
@@ -20,5 +21,7 @@
    <% end %>
   </ul>
   <br />
-  <%= link_to 'Add Prayer', new_prayer_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'Add Prayer', new_prayer_path %>
+  <% end %>
 </div>

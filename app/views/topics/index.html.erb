@@ -13,16 +13,20 @@
  </p>
 </div>
 <hr />
+<% if @topics.present? %>
 <div class="row">
  <div class="span6">
-  
+ <% if @topics.last.present? %>    
   <h3>Featured Topic</h3>
-  <p><%=  link_to image_tag("soulcare.jpg", :width => 350), root_path %></p>
-  <h4>Title</h4>
-  <p>Intro...</p>
-
-  <p><%= Date.today %></p>
+  <p><%=  link_to image_tag(@topics.last.image, :width => 350), topic %></p>
+  <h4><%= link_to @topics.last.title, topic %></h4>
+  <p><%= @topics.last.introduction %></p>
+  <% if @topics.last.tag_list.present? %>
+  <p><em><%= raw @topics.last.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em><p>
   
+  <p><%= Date.today %></p>
+  <% end %>
+  <% end %>
  </div> 
  <div class="span6">
   <h3>Previous Discussions</h3>
@@ -43,6 +47,7 @@
  </div>
 </div>
 <hr />
+<% end %>
 <div> 
  <p>
   Are there topics you'll like us to create a discussion about?
@@ -52,5 +57,5 @@
  </p>
   <% if user_signed_in? %> 
     <%= link_to 'Add topic for discussion', new_topic_path %>
-  <% end %>
+  <% end %>  
 </div>

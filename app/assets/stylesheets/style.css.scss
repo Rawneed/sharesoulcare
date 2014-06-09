@@ -83,7 +83,12 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+    font-color: white;
   }
+  a {
+     text-decoration: none;
+     color: white;
+    }
 }
 
 /* footer */
@@ -95,8 +100,9 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
+    text-decoration: none;
     &:hover { 
-      color: $grayDarker;
+      color: $grayLighter;		
     }
   }  
   small { 
@@ -146,7 +152,7 @@ aside {
   }
 }
 
-.gravatar {
+.inspiration {
   float: left;
   margin-right: 10px;
 }

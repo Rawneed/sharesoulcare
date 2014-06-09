@@ -1,5 +1,7 @@
 ShareSoulCare::Application.routes.draw do
    
+  get "profile/index"
+  get "profile/update"
   devise_for :users
   resources :users
   resources :sessions
