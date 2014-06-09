@@ -50,10 +50,6 @@ GEM
       activesupport (>= 3.0.0)
     arel (4.0.2)
     bcrypt (3.1.7)
-    biblesearch-api (1.1.0)
-      hashie
-      httparty
-      oj
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -131,11 +127,7 @@ GEM
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
-    hashie (3.0.0)
     hike (1.2.3)
-    httparty (0.13.1)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     inherited_resources (1.5.0)
       has_scope (~> 0.6.0.rc)
@@ -163,14 +155,12 @@ GEM
     minitest (4.7.5)
     multi_json (1.10.1)
     multi_test (0.1.1)
-    multi_xml (0.5.5)
     mysql2 (0.3.16)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    oj (2.9.5)
     orm_adapter (0.5.0)
     polyamorous (1.0.0)
       activerecord (>= 3.0)
@@ -282,7 +272,6 @@ DEPENDENCIES
   activerecord-import
   acts-as-taggable-on
   bcrypt (~> 3.1.7)
-  biblesearch-api (= 1.1.0)
   bootstrap-sass (~> 2.3.2.0)
   bootstrap-will_paginate (= 0.0.9)
   capistrano
