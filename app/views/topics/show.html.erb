@@ -27,6 +27,7 @@
  <strong>Prayer</strong>
  <p><%= @topic.prayer %></p>
 </div>
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_topic_path(@topic) %>
+<% end %>
 <%= link_to 'Back to Topics', topics_path %>
