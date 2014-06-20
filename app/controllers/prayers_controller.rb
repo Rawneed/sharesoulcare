@@ -1,5 +1,5 @@
 class PrayersController < ApplicationController
-  before_filter :authorize, :except => :index
+  before_filter :authenticate_user!, :except => [:show, :index] 
   before_action :set_prayer, only: [:show, :edit, :update, :destroy]
 
   def featured
@@ -10,13 +10,12 @@ class PrayersController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    # @prayers = Prayer.all
-   if params[:tag] 
-    @prayers = Prayer.tagged_with(params[:tag])
-   else
-    @prayers = Prayer.paginate(page: params[:page])   
+    if params[:tag]
+      @prayers = Prayer.tagged_with(params[:tag])
+    else
+      @prayers = Prayer.paginate(page: params[:page])   
    end
-  end
+ end
 
   # GET /topics/1
   # GET /topics/1.json

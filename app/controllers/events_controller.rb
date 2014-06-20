@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :authorize, :except => :index
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   require 'will_paginate/array'
   def featured

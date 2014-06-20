@@ -1,4 +1,5 @@
 class InspirationsController < ApplicationController
+ before_filter :authenticate_user!, :except => [:show, :index]
  before_action :set_inspiration, only: [:show, :edit, :update, :destroy]
   
  def index
