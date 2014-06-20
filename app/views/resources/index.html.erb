@@ -1,0 +1,36 @@
+<% provide(:title, 'Helpful Resources') %>
+
+<h1>Useful Resources for soul care members</h1>
+
+<p>
+	A selection of useful resources for help keep you in the faith, build you up and 
+	inform you about what's availble around you. Have you recently moved to a new city? Are
+	you looking for a family friendly radio-station, or wholesome resources for your kids? 
+	Take a look at the Resource listings. 
+<% if user_signed_in? %>
+ <%= link_to 'Help someone today...', new_resource_path %>
+<% end %>
+</p>
+<hr />
+<%= will_paginate  %>
+
+<div class="prayer-list"> 
+ <ul>
+ <% @resources.each do |resource| %>
+  <li>
+   <%= image_tag resource.image_url(:thumb) if resource.image? %>
+   <strong><%= link_to resource.title, resource %></strong><br />
+   <p><small>at </small><%= resource.location %> 
+    <small>posted on </small><%= resource.created_at.to_formatted_s(:rfc822) %>
+   <span class="label label-success"><%= resource.citystate %></span></p>
+   <% if resource.tag_list.present? %><em>Tags: 
+   <%= raw resource.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><% end %></em>
+  </li>
+  <hr />
+ <% end %>
+ </ul>
+ <%= will_paginate %>
+ <% if user_signed_in? %>
+ <%= link_to 'Share a helpful resource', new_resource_path %>
+ <% end %>
+</div>

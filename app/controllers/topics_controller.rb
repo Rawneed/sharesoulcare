@@ -4,7 +4,8 @@ class TopicsController < ApplicationController
   require 'will_paginate/array'
   def featured
    @featured_topics = Topic.tagged_with(params[:tag]).last
-  # Topic.where("id <= ?", topic.id).destroy_all
+    @topics = Topic.last
+    #Topic.where("id <= ?", topic.id).destroy_all
   end
 
   # GET /topics

@@ -1,0 +1,26 @@
+<!-- RESOURCES - SHOW -->
+
+
+<div id="resource-show">
+ <h2><%= @resource.title %></h2>
+ <%= image_tag(@resource.image, :width => 350) if @resource.image.present? %>
+ <hr />
+ <div class="well well-sm">
+  <blockquote class="blockquote-reverse">
+   <p><em><%= @resource.description %></em></p>
+  </blockquote>
+ </div>
+ <p class="lead"><%= @resource.location %></p>
+ <hr />
+ <strong>City, State</strong>
+ <p><%= @resource.citystate %></p>
+ <hr />
+ <% if @resource.link.present? %>
+   <strong>Link</strong>
+   <p><a href=<% @resource.link %> >Learn more</a></p>
+ <% end %>
+</div>
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_resource_path(@resource) %>
+<% end %>
+<%= link_to 'Back to resource', resources_path %>

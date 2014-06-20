@@ -1,5 +1,13 @@
 ShareSoulCare::Application.routes.draw do
    
+  get "resources/index"
+  get "resources/show"
+  get "resources/new"
+  get "resources/edit"
+  # get "resource/index"
+  # get "resource/show"
+  # get "resource/new"
+  # get "resource/edit"
   get "profile/index"
   get "profile/update"
   devise_for :users
@@ -20,6 +28,8 @@ ShareSoulCare::Application.routes.draw do
   resources :groups
 # resources :tags
 
+  resources :resources
+
   match '/logout', to: 'session#destroy', :as => 'logout', via: 'get'
   match '/login', to:  'session#new', :as => 'login', via: 'get'
   match '/sign-up', to: 'users#new', :as => "sign_up", via: 'get'
@@ -34,7 +44,7 @@ ShareSoulCare::Application.routes.draw do
   match '/groups/connect-with-a-group', to: 'groups#connect', :as => :connect_groups, via: 'get'
   
   get "inspirations/index"
-  
+   match '/resources/index', to: 'resources#index', via: 'get'  
 #  match 'events/tags/:id' => 'events#tag', via: 'get', :as => :tags
    get 'topics/tags/:tag',  to: 'topics#index',  as: :tag 
 #  get 'prayers/tags/:tag', to: 'prayers#index', as: :tag
