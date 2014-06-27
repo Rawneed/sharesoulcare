@@ -18,7 +18,7 @@
    <strong><%= link_to event.title, event %></strong><br />
    <p><small>at </small><%= event.location %> 
     <small>on </small><%= event.date.to_formatted_s(:rfc822) %>
-    starts at <%= event.time.to_formatted_s(:time) %>
+    starts at <%= event.time.strftime("%I:%M %p") %>
    <span class="label label-success"><%= event.cost %></span></p>
    <% if event.tag_list.present? %><em>Tags: 
    <%= raw event.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><% end %></em>
