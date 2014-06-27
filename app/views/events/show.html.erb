@@ -32,8 +32,10 @@
 </p>
 
 <p>
-  <strong>Event type:</strong>
-  <%= @event.event_type_id %>
+  <% if @event.event_type_id.present? %>
+    <strong>Event type:</strong>
+    <%= @event.event_type_id %>
+  <% end %>
 </p>
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
