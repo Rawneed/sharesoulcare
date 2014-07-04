@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608225946) do
+ActiveRecord::Schema.define(version: 20140704144528) do
 
   create_table "event_types", force: true do |t|
     t.string   "type"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140608225946) do
     t.integer  "event_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
   end
 
   create_table "group_details", force: true do |t|
