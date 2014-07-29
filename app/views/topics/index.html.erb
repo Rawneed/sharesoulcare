@@ -19,7 +19,7 @@
  <% if @topics.last.present? %>    
   <h3>Featured Topic</h3>
   <p><%=  link_to image_tag(@topics.last.image, :width => 350), topic_path(@topics) %></p>
-  <h4><%= link_to @topics.last.title, topic_path(@topics) %></h4>
+  <h4><%= link_to @topics.last.title, topic_path(@topics.last) %></h4>
   <p><%= @topics.last.introduction %></p>
   <% if @topics.last.tag_list.present? %>
   <p><em><%= raw @topics.last.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em><p>
