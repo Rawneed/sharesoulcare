@@ -4,29 +4,20 @@ ShareSoulCare::Application.routes.draw do
   get "resources/show"
   get "resources/new"
   get "resources/edit"
-  # get "resource/index"
-  # get "resource/show"
-  # get "resource/new"
-  # get "resource/edit"
+
   get "profile/index"
   get "profile/update"
   devise_for :users
   resources :users
   resources :sessions
-  # get "about/overview"
-  # get "about/team"
-  # get "about/contact"
-  # get "groups/index"
-  # get "groups/find"
-  # get "groups/start"
-  # get "groups/connect"
+  
   resources :topics
   resources :inspirations
   resources :events
   resources :event_types
   resources :prayers
   resources :groups
-# resources :tags
+
 
   resources :resources
 
@@ -44,20 +35,9 @@ ShareSoulCare::Application.routes.draw do
   match '/groups/connect-with-a-group', to: 'groups#connect', :as => :connect_groups, via: 'get'
   
   get "inspirations/index"
-   match '/resources/index', to: 'resources#index', via: 'get'  
-#  match 'events/tags/:id' => 'events#tag', via: 'get', :as => :tags
-   get 'topics/tags/:tag',  to: 'topics#index',  as: :tag 
-#  get 'prayers/tags/:tag', to: 'prayers#index', as: :tag
+  match '/resources/index', to: 'resources#index', via: 'get'  
+  get 'topics/tags/:tag',  to: 'topics#index',  as: :tag 
 
-# , ActiveAdmin::Devise.config
-#  ActiveAdmin.routes(self)
-#  devise_for :users
-#  root "demo_pages#guest-home-page"
-#  get "demo_pages/user-home-page"
-#  get "demo_pages/admin-home-page"
-#  get "demo_pages/profil-page"
-#  get "demo_pages/events-page"
-#  get "demo_pages/discussion-page"
   root 'topics#index'  
 
   resources :topics

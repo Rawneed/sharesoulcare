@@ -5,14 +5,11 @@ class TopicsController < ApplicationController
   def featured
    @featured_topics = Topic.tagged_with(params[:tag]).last
     @topics = Topic.last
-    #Topic.where("id <= ?", topic.id).destroy_all
   end
 
   # GET /topics
   # GET /topics.json
   def index
-    # @topics = Topic.all
-  # if params{:tag}
     @topics = Topic.tagged_with(params[:tag])
   # else 
     @topics = Topic.paginate(:page => params[:page], :order => 'created_at DESC')

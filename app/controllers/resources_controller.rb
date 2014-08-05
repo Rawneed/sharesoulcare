@@ -18,10 +18,6 @@ class ResourcesController < ApplicationController
   def edit
   end
 
-#  def permitted_param
-#    param.permit :utf8, :link
-#  end
-
   def create
     @resource = Resource.new(resource_params)
 

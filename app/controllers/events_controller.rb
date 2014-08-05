@@ -3,8 +3,6 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   require 'will_paginate/array'
   def featured
-  # @events = Event.order(:id).limit(1).last
-  # Event.where("id <= ?", topic.id).destroy_all
   end
 
  def tag
@@ -15,12 +13,8 @@ class EventsController < ApplicationController
   # GET /event
   # GET /events.json
   def index
-    # @events = Event.all
-   # if params{:tag}
     @events = Event.tagged_with(params[:tag])
-   # else 
     @events = Event.paginate(:page => params[:page], :order => 'created_at DESC')
-   # end
   end
 
   # GET /events/1

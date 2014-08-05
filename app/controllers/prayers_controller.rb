@@ -3,8 +3,6 @@ class PrayersController < ApplicationController
   before_action :set_prayer, only: [:show, :edit, :update, :destroy]
 
   def featured
-  # @prayer = Prayer.order(:id).limit(1).last
-  # Prayer.where("id <= ?", topic.id).destroy_all
   end
 
   # GET /topics

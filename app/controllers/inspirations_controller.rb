@@ -3,7 +3,6 @@ class InspirationsController < ApplicationController
  before_action :set_inspiration, only: [:show, :edit, :update, :destroy]
   
  def index
-  # @inspirations = Inspiration.all
   @inspirations = Inspiration.tagged_with(:tag)
   @inspirations = Inspiration.paginate(page: params[:page])
  end
