@@ -1,12 +1,19 @@
 <% provide(:title, 'Inspirations - Prayers') %>
 <h1>Inspirations - Prayers</h1>
+<div class="row">
+  <div class="span3">
+    <%= image_tag("prayers.jpg") %>
+  </div>
+  <div class="span9">
 <p>
  A selection of prayer points for many of life's situations.
  Don't know what to say in prayer? Use these prayer points as a conversation starter between you 
  and God. <% if user_signed_in? %> <%= link_to 'Add Prayer', new_prayer_path %>
  <% end %>
 </p>
+</div>
 <hr />
+</div>
 <div id="prayer-list">
   <ul class="list-unstyled">
    <% @prayers.each do |prayer| %>

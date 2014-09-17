@@ -1,6 +1,12 @@
 <% provide(:title, 'Inspirations - Watch and listen') %>
-
+ 
 <h1>Inspirations - Watch and Listen</h1>
+<div class="row">
+  <div class="span3">
+    <%= image_tag("video.jpg") %>
+  </div>
+  <div class="span9">
+
 
 <p>
  A selection of inspirational videos to encourage you and make your a day a little better.
@@ -11,6 +17,8 @@
  <%= link_to 'Inspire today...', new_inspiration_path %>
 <% end %>
 </p>
+</div>
+</div>
 <hr />
 <%= will_paginate  %>
 
